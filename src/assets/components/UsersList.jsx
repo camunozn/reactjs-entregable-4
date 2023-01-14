@@ -1,7 +1,12 @@
 import React from "react";
+import UserCard from "./UserCard";
 
 const UsersList = () => {
-  return <div></div>;
+  return (
+    <div className="users-list">
+      <UserCard />
+    </div>
+  );
 };
 
 export default UsersList;
