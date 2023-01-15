@@ -4,6 +4,7 @@ import Header from "./assets/components/Header";
 import UsersList from "./assets/components/UsersList";
 import Pagination from "./assets/components/Pagination";
 import UsersSearch from "./assets/components/UsersSearch";
+import UsersForm from "./assets/components/UsersForm";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <section className="section-users">
           <UsersList />
           <Pagination />
+          <UsersForm />
         </section>
       </main>
     </div>
