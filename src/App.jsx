@@ -9,13 +9,40 @@ import UsersForm from './assets/components/UsersForm';
 
 function App() {
   const [usersList, setUsersList] = useState([]);
+  const [userSelected, setUserSelected] = useState(null);
   const [isHidden, setIsHidden] = useState(true);
 
   useEffect(() => {
+    getUsers();
+  }, []);
+
+  const getUsers = () => {
     axios
       .get('https://users-crud.academlo.tech/users/')
       .then(res => setUsersList(res.data));
-  }, []);
+  };
+
+  const addUser = user => {
+    axios
+      .post('https://users-crud.academlo.tech/users/', user)
+      .then(() => {
+        getUsers();
+        deselectUser();
+      })
+      .catch(error => console.error(error.response?.data));
+  };
+
+  const updateUser = user => {
+    alert('update user');
+  };
+
+  const selectUser = user => {
+    setUserSelected(user);
+  };
+
+  const deselectUser = () => {
+    setUserSelected(null);
+  };
 
   const toggleIsHidden = () => {
     setIsHidden(!isHidden);
@@ -31,12 +58,22 @@ function App() {
           <UsersSearch />
         </section>
         <section className="section-users">
-          <UsersList toggleIsHidden={toggleIsHidden} />
+          <UsersList
+            toggleIsHidden={toggleIsHidden}
+            usersList={usersList}
+            selectUser={selectUser}
+          />
           <Pagination />
         </section>
         <section className="section-form">
           <div className={`modal ${isHidden ? 'hidden' : ''}`}>
-            <UsersForm toggleIsHidden={toggleIsHidden} />
+            <UsersForm
+              toggleIsHidden={toggleIsHidden}
+              addUser={addUser}
+              updateUser={updateUser}
+              userSelected={userSelected}
+              deselectUser={deselectUser}
+            />
           </div>
           <div className={`overlay ${isHidden ? 'hidden' : ''}`}></div>
         </section>

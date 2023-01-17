@@ -1,15 +1,17 @@
 import React from 'react';
 import UserCard from './UserCard';
 
-const UsersList = ({ toggleIsHidden }) => {
+const UsersList = ({ toggleIsHidden, usersList, selectUser }) => {
   return (
     <div className="users-list grid grid--3-cols">
-      <UserCard toggleIsHidden={toggleIsHidden} />
-      <UserCard />
-      <UserCard />
-      <UserCard />
-      <UserCard />
-      <UserCard />
+      {usersList.map(user => (
+        <UserCard
+          toggleIsHidden={toggleIsHidden}
+          key={user.id}
+          user={user}
+          selectUser={selectUser}
+        />
+      ))}
     </div>
   );
 };
