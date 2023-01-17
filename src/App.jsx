@@ -33,7 +33,21 @@ function App() {
   };
 
   const updateUser = user => {
-    alert('update user');
+    axios
+      .put(`https://users-crud.academlo.tech/users/${userSelected?.id}/`, user)
+      .then(() => {
+        getUsers();
+        deselectUser();
+      })
+      .catch(error => console.error(error.response?.data));
+  };
+
+  const deleteUser = user => {
+    axios
+      .delete(`https://users-crud.academlo.tech/users/${user?.id}/`)
+      .then(() => {
+        getUsers();
+      });
   };
 
   const selectUser = user => {
@@ -62,6 +76,7 @@ function App() {
             toggleIsHidden={toggleIsHidden}
             usersList={usersList}
             selectUser={selectUser}
+            deleteUser={deleteUser}
           />
           <Pagination />
         </section>

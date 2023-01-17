@@ -1,6 +1,6 @@
 import React from 'react';
 
-const UserCard = ({ toggleIsHidden, user, selectUser }) => {
+const UserCard = ({ toggleIsHidden, user, selectUser, deleteUser }) => {
   return (
     <div className="user-card">
       <div className="card-data">
@@ -15,7 +15,12 @@ const UserCard = ({ toggleIsHidden, user, selectUser }) => {
         </div>
       </div>
       <div className="button-container flex">
-        <button className="btn btn--delete">
+        <button
+          className="btn btn--delete"
+          onClick={() => {
+            deleteUser(user);
+          }}
+        >
           <i className="fa-solid fa-trash-can"></i>
         </button>
         <button

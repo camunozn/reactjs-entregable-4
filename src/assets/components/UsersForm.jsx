@@ -112,6 +112,7 @@ const UsersForm = ({
             id="password"
             value={password}
             onChange={e => setPassword(e.target.value)}
+            // disabled={userSelected ? true : false}
           />
         </div>
         <div className="input-container">
