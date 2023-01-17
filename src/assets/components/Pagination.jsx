@@ -1,13 +1,17 @@
-import React from "react";
+import React from 'react';
 
 const Pagination = () => {
   return (
-    <div className="pagination">
-      <button className="btn btn--prev-page">Prev Page</button>
+    <div className="pagination flex">
+      <button className="btn btn--page btn--prev-page">
+        <i className="fa-solid fa-caret-left"></i>
+      </button>
       <div className="pages-buttons">
-        <button className="btn btn--page">1</button>
+        <button className="btn btn--page btn--curr-page">1</button>
       </div>
-      <button className="btn btn--next-page">Next Page</button>
+      <button className="btn btn--page btn--next-page">
+        <i className="fa-solid fa-caret-right"></i>
+      </button>
     </div>
   );
 };

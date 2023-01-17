@@ -1,10 +1,10 @@
-import React from "react";
+import React from 'react';
 
 const UsersSearch = () => {
   return (
-    <div className="users-search">
+    <div className="users-search flex">
       <input className="search-input" type="text" />
-      <button className="btn btn--search">Search</button>
+      <button className="btn btn--search">search</button>
     </div>
   );
 };

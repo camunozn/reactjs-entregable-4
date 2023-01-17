@@ -1,10 +1,12 @@
-import React from "react";
+import React from 'react';
 
-const Header = () => {
+const Header = ({ toggleIsHidden }) => {
   return (
-    <div className="header">
+    <div className="header flex">
       <h1 className="heading-primary">Usuarios</h1>
-      <button className="btn btn--user">+ new user</button>
+      <button className="btn btn--user" onClick={toggleIsHidden}>
+        + create new user
+      </button>
     </div>
   );
 };
