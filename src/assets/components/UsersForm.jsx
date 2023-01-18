@@ -72,6 +72,7 @@ const UsersForm = ({
               <i className="fa-solid fa-user"></i>
             </label>
             <input
+              required
               placeholder="Name"
               type="text"
               id="name"
@@ -82,6 +83,7 @@ const UsersForm = ({
           <div className="input-container">
             <label htmlFor="surname"></label>
             <input
+              required
               placeholder="Last Name"
               type="text"
               id="surname"
@@ -95,6 +97,7 @@ const UsersForm = ({
             <i className="fa-solid fa-envelope"></i>
           </label>
           <input
+            required
             placeholder="Email"
             type="email"
             id="email"
@@ -107,6 +110,7 @@ const UsersForm = ({
             <i className="fa-solid fa-lock"></i>
           </label>
           <input
+            required
             placeholder="Password"
             type="password"
             id="password"
@@ -120,6 +124,7 @@ const UsersForm = ({
             <i className="fa-solid fa-cake-candles"></i>
           </label>
           <input
+            required
             placeholder="Birthday date"
             type="date"
             id="birthday"
