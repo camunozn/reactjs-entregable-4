@@ -1,6 +1,6 @@
 import React from 'react';
 
-const UserCard = ({ toggleIsHidden, user, selectUser, deleteUser }) => {
+const UserCard = ({ toggleShowForm, user, selectUser, deleteUser }) => {
   return (
     <div className="user-card">
       <div className="card-data">
@@ -27,7 +27,7 @@ const UserCard = ({ toggleIsHidden, user, selectUser, deleteUser }) => {
           className="btn btn--edit"
           onClick={() => {
             selectUser(user);
-            toggleIsHidden();
+            toggleShowForm();
           }}
         >
           <i className="fa-solid fa-pencil"></i>

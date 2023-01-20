@@ -1,12 +1,12 @@
 import React from 'react';
 import UserCard from './UserCard';
 
-const UsersList = ({ toggleIsHidden, usersList, selectUser, deleteUser }) => {
+const UsersList = ({ toggleShowForm, usersList, selectUser, deleteUser }) => {
   return (
     <div className="users-list grid grid--3-cols">
       {usersList.map(user => (
         <UserCard
-          toggleIsHidden={toggleIsHidden}
+          toggleShowForm={toggleShowForm}
           key={user.id}
           user={user}
           selectUser={selectUser}

@@ -324,3 +324,51 @@ body {
 .btn--form {
   width: 100%;
 }
+
+/************************/
+/* ALERT WINDOW */
+/************************/
+
+.alert {
+  background-color: #fff;
+  width: 40rem;
+  height: 25rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 2rem 3rem rgba(0, 0, 0, 0.2);
+  z-index: 100;
+  transition: all 0.5s;
+}
+
+.alert-window {
+  font-size: 2rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  padding: 4rem;
+}
+
+.alert-icon {
+  font-size: 6rem;
+  margin-bottom: 2.4rem;
+}
+
+.alert-icon--success {
+  color: lightgreen;
+}
+
+.alert-icon--error {
+  color: lightcoral;
+}
+
+.alert-title {
+  text-transform: capitalize;
+  margin-bottom: 1.6rem;
+}
+
+.alert-title h2 {
+  font-weight: 500;
+  letter-spacing: 0.75px;
+}

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
 const UsersForm = ({
-  toggleIsHidden,
+  toggleShowForm,
   addUser,
   updateUser,
   userSelected,
@@ -35,10 +35,10 @@ const UsersForm = ({
     };
     if (userSelected) {
       updateUser(user);
-      toggleIsHidden();
+      toggleShowForm();
     } else {
       addUser(user);
-      toggleIsHidden();
+      toggleShowForm();
       resetFields();
     }
   };
@@ -59,7 +59,7 @@ const UsersForm = ({
       <button
         className="btn btn--close"
         onClick={() => {
-          toggleIsHidden();
+          toggleShowForm();
           deselectUser();
         }}
       >
